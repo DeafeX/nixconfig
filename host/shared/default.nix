@@ -1,5 +1,4 @@
-{pkgs, ...} : {
-  
+{pkgs, config, ...} : {
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
@@ -9,10 +8,13 @@
     
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "colemak_dh_iso";
-  
+
+  programs.zsh.enable = true;
+    
   users.users.deafex = {
     isNormalUser = true;
     extraGroups = [ "wheel"];
+    shell = pkgs.zsh;
   };
   
 
@@ -40,4 +42,6 @@
       experimental-features = nix-command flakes
       '';
   };
+
+  system.stateVersion = "23.11";
 }

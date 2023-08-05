@@ -1,10 +1,11 @@
-{ nixpkgs, home-manager, eww, ... } @ inputs : {
+{ nixpkgs, home-manager, eww, rust-overlay, ... } @ inputs : {
 
   mkHome = hostname: home-manager.lib.homeManagerConfiguration {
     pkgs = import nixpkgs {
       system = "x86_64-linux";
       config.allowUnfree = true;
       overlays = [
+        rust-overlay.overlays.default
         eww.overlays.default
       ];
     };

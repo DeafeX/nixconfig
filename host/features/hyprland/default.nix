@@ -1,4 +1,11 @@
-{
-	programs.hyprland.enable = true;
+{hyprland, pkgs, hostname, ...} : {
+
+	programs.xwayland.enable = true;
+	
+	programs.hyprland = {
+		enable = true;
+		package = hyprland.packages.${pkgs.system}.hyprland;
+		nvidiaPatches = hostname == "nekros";
+	};
 
 }

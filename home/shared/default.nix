@@ -2,13 +2,13 @@
   home.username = "deafex";
   home.homeDirectory = "/home/deafex";
   
-  home.stateVersion = "23.05";  
+  home.stateVersion = "23.11";  
 
 
   home.packages = with pkgs; [
     google-chrome
     nil
-		firefox-wayland
+	firefox-wayland
     obsidian  
   ];
 

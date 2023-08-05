@@ -4,11 +4,24 @@ let
   kb_settings = config.home.keyboard;
   numberOfWorkspaces = 9;
   isLaptop = if hostname == "phobos" then true else false;
+  mod = "ALT_L";
+  defaultValues = {
+    workspaces = 9;
+    "$mod" = mod;
+    
+  };
 in
 ''
 $mod = ALT_L
 
 monitor = ${if hostname == "phobos" then "eDP-1" else "HDMI-A-1"}, 1920x1080, 0x0, 1
+
+${if isLaptop == false then "
+env = LIBVA_DRIVER_NAME,nvidia
+env = XDG_SESSION_TYPE,wayland
+env = GBM_BACKEND,nvidia-drm
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = WLR_NO_HARDWARE_CURSORS,1" else ""}
 
 input {
   kb_layout = ${ kb_settings.layout }
@@ -17,20 +30,25 @@ input {
   repeat_delay = 325
   repeat_rate = 38
 
-  sensitivity = ${if isLaptop then "0.35" else "0.5" }
+  sensitivity = ${if isLaptop then "0.35" else "0.5"}
   follow_mouse = 1
-
+  force_no_accel = ${if isLaptop then "false" else "true"}
   touchpad {
     natural_scroll = false
     scroll_factor = 0.8
   } 
 }
 
-decoration {
+${if isLaptop then 
+''decoration {
   rounding = 10
   blur = false
 
-  drop_shadow = false
+  drop_shadow = false 
+}'' else 
+''decoration {
+  rounding = 10  
+}''
 }
 
 general {

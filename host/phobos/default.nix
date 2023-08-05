@@ -14,6 +14,5 @@
   networking.wireless.enable = false;
   networking.networkmanager.enable = true;  
 
-  system.stateVersion = "23.05"; # Did you read the comment?
 }
 
