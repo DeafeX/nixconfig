@@ -37,10 +37,15 @@
     
     nixosConfigurations = {
       phobos = lib.mkHost "phobos";
+
+      nekros = lib.mkHost "nekros";
     };
 
     homeConfigurations = {
       "deafex@phobos" = lib.mkHome "phobos";
+
+      "deafex@nekros" = lib.mkHome "nekros";
+
     };    
   };
 }

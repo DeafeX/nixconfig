@@ -27,15 +27,17 @@
 				};
 			};
 
-			languages = [
-				{
-					name = "nix";
-					indent = { 
-						tab-width = 2; 
-						unit = "	";
-					};
-				}
-			];
+			languages = {
+				language = [
+					{
+						name = "nix";
+						indent = { 
+							tab-width = 2; 
+							unit = "	";
+						};
+					}
+				];
+			};
 
 			
 			keys = {

@@ -1,5 +1,9 @@
 {pkgs, ...} : {
-
+  
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.useOSProber = true;
   i18n.defaultLocale = "en_US.UTF-8";
   console.useXkbConfig = true;
     
@@ -9,7 +13,6 @@
   users.users.deafex = {
     isNormalUser = true;
     extraGroups = [ "wheel"];
-    shell = pkgs.zsh;
   };
   
 

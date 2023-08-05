@@ -8,7 +8,7 @@ in
 ''
 $mod = ALT_L
 
-monitor = eDP-1, 1920x1080, 0x0, 1
+monitor = ${if hostname == "phobos" then "eDP-1" else "HDMI-A-1"}, 1920x1080, 0x0, 1
 
 input {
   kb_layout = ${ kb_settings.layout }
