@@ -1,8 +1,13 @@
-{pkgs, config, ...} : {
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.useOSProber = true;
+{pkgs, ...} : {
+  imports = [
+    ./grub.nix
+    ./nixcfg.nix
+    ./sound.nix
+  ];
+  
+  networking.wireless.enable = false;
+  networking.networkmanager.enable = true;
+  
   i18n.defaultLocale = "en_US.UTF-8";
   console.useXkbConfig = true;
     
@@ -17,30 +22,19 @@
     shell = pkgs.zsh;
   };
   
+  environment = {
+    systemPackages = [
+      pkgs.pciutils
+    ];
+    defaultPackages = [];
+    pathsToLink = [
+      "/shared/zsh"
+    ];
+  }; 
 
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = [
-    pkgs.pciutils
-  ];
-
-  environment.defaultPackages = [];
-
-  
-  environment.pathsToLink = [
-    "/shared/zsh"
-  ];
-  nix.settings.auto-optimise-store = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-  };
-
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      '';
+  services = {
+    upower.enable = true;
+    power-profiles-daemon.enable = true;
   };
 
   system.stateVersion = "23.11";

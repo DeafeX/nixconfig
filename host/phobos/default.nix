@@ -1,18 +1,15 @@
 { config, pkgs, ... }:
 {
   imports = [
-      ./hardware-configuration.nix
-      ../shared
-      ../features/hyprland
+    ./hardware-configuration.nix
+    ../shared
+    ../features/hyprland      
   ];
+
+  sound.enable = true;
   
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.efiSupport = true;
-
-
-  networking.wireless.enable = false;
-  networking.networkmanager.enable = true;  
-
+  services = {
+    tlp.enable = true;
+  };
 }
 

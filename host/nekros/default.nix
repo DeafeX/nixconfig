@@ -3,10 +3,14 @@
 	  ./hardware-configuration.nix
     ../shared
     ../features/hyprland
+    ../features/pipewire
   ];
+
   services.xserver.videoDrivers = ["nvidia"];
   
   hardware.nvidia.modesetting.enable = true;
+  
+  boot.loader.grub.useOSProber = true;
 
   boot.initrd.kernelModules = [
     "nvidia"

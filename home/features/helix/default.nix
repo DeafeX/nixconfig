@@ -24,7 +24,7 @@
 
 				indent-guides = {
 					render = true;
-					character = "╎";
+					character = "▏";
 				};
 			};
 						

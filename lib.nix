@@ -16,6 +16,11 @@
 
   
   mkHost = hostname: nixpkgs.lib.nixosSystem {
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+      
       specialArgs = inputs // { hostname = hostname; };
       modules = [
         { networking.hostName = hostname; }

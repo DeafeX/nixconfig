@@ -8,11 +8,23 @@
   home.packages = with pkgs; [
     google-chrome
     nil
-	firefox-wayland
-    obsidian  
+    obsidian
+    (nerdfonts.override {
+      fonts = [
+        "Mononoki"
+      ];
+    })
   ];
 
-     
+  fonts.fontconfig.enable = true;
+  
+  ### programs
+
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox-wayland;
+  };
+  
   programs.home-manager.enable = true;
 
   programs.git = {
