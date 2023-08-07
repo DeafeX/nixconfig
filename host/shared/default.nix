@@ -2,7 +2,6 @@
   imports = [
     ./grub.nix
     ./nixcfg.nix
-    ./sound.nix
   ];
   
   networking.wireless.enable = false;
@@ -25,6 +24,7 @@
   environment = {
     systemPackages = [
       pkgs.pciutils
+      pkgs.ranger
     ];
     defaultPackages = [];
     pathsToLink = [

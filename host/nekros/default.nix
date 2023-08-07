@@ -1,4 +1,4 @@
-{...} : {
+{pkgs, ...} : {
   imports = [
 	  ./hardware-configuration.nix
     ../shared
@@ -6,6 +6,10 @@
     ../features/pipewire
   ];
 
+  environment.systemPackages = [
+    pkgs.alsa-utils
+  ];
+  
   services.xserver.videoDrivers = ["nvidia"];
   
   hardware.nvidia.modesetting.enable = true;
