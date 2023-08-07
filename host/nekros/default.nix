@@ -9,8 +9,13 @@
   environment.systemPackages = [
     pkgs.alsa-utils
   ];
-  
-  services.xserver.videoDrivers = ["nvidia"];
+
+  services = {
+    xserver = {
+      videoDrivers = ["nvidia"];
+    };
+    power-profiles-daemon.enable = true; 
+  };
   
   hardware.nvidia.modesetting.enable = true;
   

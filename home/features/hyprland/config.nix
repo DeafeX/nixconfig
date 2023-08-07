@@ -42,7 +42,9 @@ input {
 ${if isLaptop then 
 ''decoration {
   rounding = 10
-  blur = false
+  blur {
+    enabled = false
+  }
 
   drop_shadow = false 
 }'' else 
