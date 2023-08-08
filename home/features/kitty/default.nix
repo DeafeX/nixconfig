@@ -8,7 +8,7 @@
 		};
 
 		shellIntegration = {
-			enableZshIntegration = true;
+			enableFishIntegration = true;
 		};
 		
 		theme = "kanagawabones";

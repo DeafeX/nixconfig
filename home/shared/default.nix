@@ -9,6 +9,7 @@
     google-chrome
     nil
     obsidian
+    ranger
     (nerdfonts.override {
       fonts = [
         "Mononoki"
@@ -33,16 +34,6 @@
     userEmail = "thalesmyfortes@gmail.com";
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    completionInit = ''autoload -U compinit && compinit && zstyle ':completion:*' menu select'';
-  };
-
-  programs.starship = {
-    enable = true;
-    
-  };
 	
 	home.keyboard = {
 		layout = "us";

@@ -2,6 +2,7 @@
   imports = [
     ./grub.nix
     ./nixcfg.nix
+    ./fish.nix
   ];
   
   networking.wireless.enable = false;
@@ -13,23 +14,19 @@
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "colemak_dh_iso";
 
-  programs.zsh.enable = true;
-    
+  programs.light.enable = true;
+      
   users.users.deafex = {
     isNormalUser = true;
     extraGroups = [ "wheel"];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
   
   environment = {
-    systemPackages = [
-      pkgs.pciutils
-      pkgs.ranger
+    systemPackages = with pkgs; [
+      pciutils
     ];
     defaultPackages = [];
-    pathsToLink = [
-      "/shared/zsh"
-    ];
   }; 
 
   services.upower.enable = true;
