@@ -27,6 +27,9 @@
       pciutils
     ];
     defaultPackages = [];
+    variables = {      
+		  LIBSEAT_BACKEND = "logind";
+    };
   }; 
 
   services.upower.enable = true;

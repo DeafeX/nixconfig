@@ -31,10 +31,7 @@
   let
     lib = import ./lib.nix inputs;
   in 
-  { 
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPkgs = true; 
-    
+  {     
     nixosConfigurations = {
       phobos = lib.mkHost "phobos";
 

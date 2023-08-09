@@ -4,6 +4,9 @@
   
   home.stateVersion = "23.11";  
 
+  imports = [
+    ./fish
+  ];
 
   home.packages = with pkgs; [
     google-chrome
