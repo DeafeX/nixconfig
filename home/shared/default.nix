@@ -5,7 +5,7 @@
   home.stateVersion = "23.11";  
 
   imports = [
-    ./fish
+    ./fish.nix
   ];
 
   home.packages = with pkgs; [

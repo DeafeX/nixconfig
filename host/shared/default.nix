@@ -2,9 +2,10 @@
   imports = [
     ./grub.nix
     ./nixcfg.nix
-    ./fish.nix
   ];
   
+  documentation.man.generateCaches = true;
+
   networking.wireless.enable = false;
   networking.networkmanager.enable = true;
   
@@ -30,6 +31,9 @@
     variables = {      
 		  LIBSEAT_BACKEND = "logind";
     };
+    pathsToLink = [
+      /share/fish
+    ];
   }; 
 
   services.upower.enable = true;
