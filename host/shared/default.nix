@@ -4,8 +4,8 @@
     ./nixcfg.nix
   ];
   
-  documentation.man.generateCaches = true;
-
+  programs.fish.enable = true;
+  
   networking.wireless.enable = false;
   networking.networkmanager.enable = true;
   
@@ -32,7 +32,7 @@
 		  LIBSEAT_BACKEND = "logind";
     };
     pathsToLink = [
-      /share/fish
+      "/share/fish"
     ];
   }; 
 

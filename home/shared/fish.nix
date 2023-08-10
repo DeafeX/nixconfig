@@ -6,6 +6,12 @@
 		fd
 	];
 
+	programs.man.generateCaches = true;
+	
+	programs.fish = {
+		enable = true;
+
+	};
 			
   programs.starship = {
     enable = true;
