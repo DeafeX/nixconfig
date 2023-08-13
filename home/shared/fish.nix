@@ -5,8 +5,6 @@
 		bat
 		fd
 	];
-
-	programs.man.generateCaches = true;
 	
 	programs.fish = {
 		enable = true;
