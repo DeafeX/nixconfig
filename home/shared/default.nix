@@ -37,6 +37,7 @@
     userEmail = "thalesmyfortes@gmail.com";
   };
 
+  services.flameshot.enable = true;
 	
 	home.keyboard = {
 		layout = "us";
