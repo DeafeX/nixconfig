@@ -1,4 +1,4 @@
-{...} @ inputs : {
+{pkgs, ...} @ inputs : {
 	imports = [
 		../shared
 		../features/helix
@@ -6,5 +6,9 @@
 		../features/kitty
 		../features/eww
 		../features/easyeffects
+	];
+
+	home.packages = [
+		pkgs.vlc
 	];
 }
