@@ -5,10 +5,14 @@
   ];
   
   programs.fish.enable = true;
-  
-  networking.wireless.enable = false;
-  networking.networkmanager.enable = true;
-  
+
+  networking = {
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+    };
+  };
+    
   i18n.defaultLocale = "en_US.UTF-8";
   console.useXkbConfig = true;
     
@@ -35,7 +39,7 @@
       "/share/fish"
     ];
   }; 
-
+  
   services.upower.enable = true;
 
   system.stateVersion = "23.11";

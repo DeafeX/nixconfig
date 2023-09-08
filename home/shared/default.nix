@@ -18,6 +18,7 @@
         "Mononoki"
       ];
     })
+    librewolf
   ];
 
   fonts.fontconfig.enable = true;
