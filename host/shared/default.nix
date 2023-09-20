@@ -6,6 +6,10 @@
   
   programs.fish.enable = true;
 
+  services.tor = {
+    enable = true;
+  };
+
   networking = {
     networkmanager.enable = true;
     firewall = {
@@ -30,6 +34,7 @@
   environment = {
     systemPackages = with pkgs; [
       pciutils
+      torsocks
     ];
     defaultPackages = [];
     variables = {      

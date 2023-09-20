@@ -1,0 +1,32 @@
+
+(defwidget button[onclick text]
+	(eventbox :class "button"
+		:onhover "${EWW_CMD}" 
+		:onhoverlost "${EWW_CMD}" 
+		:onclick onclick
+		(label 
+			:text text
+		)
+	)	
+)
+
+(defwidget poweroff []
+
+)
+
+(defwindow powermenu
+	:monitor 0
+	:geometry (geometry 
+		:x "0"
+		:y "0"
+		:width "30%"
+		:height "20%"
+		:anchor "center"
+	)
+	:stacking "overlay"
+	:exclusive false
+	(centerbox :class "powermenu"
+		:orientation "horizontal"
+		(poweroff)		
+	)	
+)

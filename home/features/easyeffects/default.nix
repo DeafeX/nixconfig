@@ -5,6 +5,5 @@
   
   xdg.configFile."easyeffects/output" = {
     source = ./presets;
-    recursive = true;
   };
 }
