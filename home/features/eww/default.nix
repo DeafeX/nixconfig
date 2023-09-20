@@ -3,5 +3,8 @@
     pkgs.eww-wayland
   ];
 
+  xdg.configFile = {
+    "eww".source = ./config;
     
+  };
 }
