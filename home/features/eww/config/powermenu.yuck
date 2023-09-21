@@ -11,7 +11,24 @@
 )
 
 (defwidget poweroff []
+	(button
+		:onclick "poweroff"
+		:text "p"
+	)
+)
 
+(defwidget reboot []
+	(button
+		:onclick "reboot"
+		:text "reboot"
+	)
+)
+
+(defwidget lock []
+	(button
+		:onclick ""
+		:text "a"
+	)
 )
 
 (defwindow powermenu
@@ -27,6 +44,8 @@
 	:exclusive false
 	(centerbox :class "powermenu"
 		:orientation "horizontal"
-		(poweroff)		
+		(poweroff)
+		(reboot)
+		(lock)
 	)	
 )
