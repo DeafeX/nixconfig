@@ -4,5 +4,6 @@
     ../features/hyprland
     ../features/kitty
     ../features/helix
+    ../features/eww
   ];
 }
