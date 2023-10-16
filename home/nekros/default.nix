@@ -12,5 +12,6 @@
 		vlc
 		ardour
 		qpwgraph
+		p7zip
 	];
 }
