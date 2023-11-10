@@ -37,7 +37,9 @@
 
       nekros = lib.mkHost "nekros";
     };
-
+    
+    homeManagerModules = import "./home/modules";
+    
     homeConfigurations = {
       "deafex@phobos" = lib.mkHome "phobos";
 
