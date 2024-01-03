@@ -6,7 +6,6 @@
 	
 	wayland.windowManager.hyprland = {
 		enable = true;
-		package = null;
 		extraConfig = import ./config.nix inputs;
 	};
 

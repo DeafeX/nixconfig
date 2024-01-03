@@ -11,7 +11,7 @@
   home.packages = with pkgs; [
     google-chrome
     nil
-    obsidian
+    #obsidian
     ranger
     (nerdfonts.override {
       fonts = [
