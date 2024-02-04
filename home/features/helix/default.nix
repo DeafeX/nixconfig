@@ -5,7 +5,7 @@
 
 	
 		settings = {
-			theme = "kanagawa";
+			theme = "mellow";
 			editor = {
 				cursorline = true;
 				bufferline = "multiple";

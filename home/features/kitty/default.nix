@@ -11,6 +11,6 @@
 			enableFishIntegration = true;
 		};
 		
-		theme = "kanagawabones";
+		theme = "Cherry Midnight";
 	};
 }

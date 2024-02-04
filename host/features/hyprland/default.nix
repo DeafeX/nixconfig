@@ -1,4 +1,4 @@
-{hyprland, pkgs, hostname, ...} : {
+{hyprland, pkgs, ...} : {
 
 	programs.xwayland.enable = true;
 	
