@@ -11,7 +11,6 @@
   home.packages = with pkgs; [
     google-chrome
     nil
-    #obsidian
     ranger
     (nerdfonts.override {
       fonts = [
@@ -20,7 +19,7 @@
     })
     librewolf
   ];
-
+  
   fonts.fontconfig.enable = true;
   
   ### programs

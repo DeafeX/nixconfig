@@ -19,9 +19,11 @@
     
   i18n.defaultLocale = "en_US.UTF-8";
   console.useXkbConfig = true;
-    
-  services.xserver.layout = "us";
-  services.xserver.xkbVariant = "colemak_dh_iso";
+
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "colemak_dh_iso";
+  };
 
   programs.light.enable = true;
       
@@ -39,6 +41,11 @@
     defaultPackages = [];
     variables = {      
 		  LIBSEAT_BACKEND = "logind";
+    };
+    sessionVariables = {
+      PATH = [
+        "$HOME/.local/bin"
+      ];
     };
     pathsToLink = [
       "/share/fish"

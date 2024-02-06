@@ -1,22 +1,21 @@
-{ nixpkgs, home-manager, ... } @ inputs : {
+{ nixpkgs, home-manager, ... } @ inputs : 
+let
+  pkgs = import nixpkgs {
+    system = "x86_64-linux";
+    config.allowUnfree= true;
+  };
+in {
 
   mkHome = hostname: home-manager.lib.homeManagerConfiguration {
-    pkgs = import nixpkgs {
-      system = "x86_64-linux";
-      config.allowUnfree = true;
-    };
+    inherit pkgs;
     
     extraSpecialArgs = inputs // { hostname = hostname; };
     modules = [ ./home/${hostname} ];
   };
-
   
   mkHost = hostname: nixpkgs.lib.nixosSystem {
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
-      
+      inherit pkgs;
+           
       specialArgs = inputs // { hostname = hostname; };
       modules = [
         { networking.hostName = hostname; }
