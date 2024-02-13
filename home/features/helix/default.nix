@@ -5,7 +5,7 @@
 
 	
 		settings = {
-			theme = "mellow";
+			theme = "amberwood";
 			editor = {
 				cursorline = true;
 				bufferline = "multiple";
