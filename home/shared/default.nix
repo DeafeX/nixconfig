@@ -5,7 +5,7 @@
   home.stateVersion = "23.11";  
 
   imports = [
-    ./fish.nix
+    ./nushell.nix
   ];
 
   home.packages = with pkgs; [

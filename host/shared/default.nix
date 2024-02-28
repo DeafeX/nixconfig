@@ -30,7 +30,7 @@
   users.users.deafex = {
     isNormalUser = true;
     extraGroups = [ "wheel"];
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
   };
   
   environment = {

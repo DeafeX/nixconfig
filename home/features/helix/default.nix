@@ -3,7 +3,6 @@
 		enable = true;
 		defaultEditor = true;
 
-	
 		settings = {
 			theme = "amberwood";
 			editor = {
@@ -39,6 +38,29 @@
 					C-w = ":buffer-close";
 				};
 			};
+		};
+
+		languages = {
+			language = [
+				{
+					name = "rust";
+
+					debugger = {
+						name = "lldb-vscode";
+        		transport = "stdio";
+						command = "lldb-vscode";
+						
+						templates = [
+							{
+								name = "binary";
+								request = "launch";
+								completion = [ {name = "binary"; completion = "filename"; } ];
+								args = { program = "{0}"; initCommands = [ "command script import /usr/local/etc/lldb_vscode_rustc_primer.py" ]; };
+							}
+						];
+					};
+				}
+			];
 		};
 	};
 }
