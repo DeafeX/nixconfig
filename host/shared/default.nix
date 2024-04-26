@@ -4,7 +4,6 @@
     ./nixcfg.nix
   ];
   
-  programs.fish.enable = true;
 
   services.tor = {
     enable = true;
@@ -15,6 +14,13 @@
     firewall = {
       enable = true;
     };
+  };
+
+  fonts = {
+    packages = with pkgs; [
+      kochi-substitute
+    ];
+
   };
     
   i18n.defaultLocale = "en_US.UTF-8";
@@ -47,9 +53,6 @@
         "$HOME/.local/bin"
       ];
     };
-    pathsToLink = [
-      "/share/fish"
-    ];
   }; 
   
   services.upower.enable = true;

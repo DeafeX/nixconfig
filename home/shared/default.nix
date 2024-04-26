@@ -5,19 +5,18 @@
   home.stateVersion = "23.11";  
 
   imports = [
-    ./nushell.nix
+    ./nushell
   ];
 
   home.packages = with pkgs; [
     google-chrome
     nil
-    ranger
     (nerdfonts.override {
       fonts = [
         "Mononoki"
       ];
     })
-    librewolf
+    anki-bin
   ];
   
   fonts.fontconfig.enable = true;
@@ -37,7 +36,6 @@
     userEmail = "thalesmyfortes@gmail.com";
   };
 
-  services.flameshot.enable = true;
 	
 	home.keyboard = {
 		layout = "us";
