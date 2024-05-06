@@ -12,5 +12,6 @@
 		ardour
 		qpwgraph
 		p7zip
+		ncspot
 	];
 }

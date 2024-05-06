@@ -6,9 +6,11 @@
     ../features/pipewire
   ];
 
-  environment.systemPackages = [
-    pkgs.alsa-utils
+  environment.systemPackages = with pkgs; [
+    alsa-utils
   ];
+
+  
 
   services = {
     xserver = {
@@ -17,12 +19,12 @@
     power-profiles-daemon.enable = true; 
   };
 
-  
-  hardware.nvidia = {
-   package = config.boot.kernelPackages.nvidiaPackages.legacy_390;
     
-   modesetting.enable = true;
-   nvidiaSettings = true;
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    modesetting.enable = true;
+    nvidiaSettings = true;
   };
   
   boot.loader.grub.useOSProber = true;
