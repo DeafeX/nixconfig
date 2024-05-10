@@ -9,7 +9,11 @@
   ];
 
   home.packages = with pkgs; [
-    google-chrome
+    (google-chrome.override {
+      commandLineArgs = [
+        "--ozone-platform=wayland"
+      ];
+    })
     nil
     (nerdfonts.override {
       fonts = [
