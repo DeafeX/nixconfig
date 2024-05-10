@@ -5,9 +5,6 @@
   ];
   
 
-  services.tor = {
-    enable = true;
-  };
 
   networking = {
     networkmanager.enable = true;
@@ -42,7 +39,6 @@
   environment = {
     systemPackages = with pkgs; [
       pciutils
-      torsocks
     ];
     defaultPackages = [];
     variables = {      

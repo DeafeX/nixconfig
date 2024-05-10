@@ -54,11 +54,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1715337759,
         "narHash": "sha256-40LDJ1bgnIDHMq9ooNKAe6pg8ukxmecvfrF5yELPrWs=",
         "owner": "nix-community",
         "repo": "home-manager",
         "rev": "f61917cbaa6dba317e757aefd0bbb56403aff2f8",
+=======
+        "lastModified": 1714515075,
+        "narHash": "sha256-azMK7aWH0eUc3IqU4Fg5rwZdB9WZBvimOGG3piqvtsY=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "6d3b6dc9222c12b951169becdf4b0592ee9576ef",
+>>>>>>> refs/remotes/codeberg/main
         "type": "github"
       },
       "original": {
@@ -108,11 +116,19 @@
         "xdph": "xdph"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1715339018,
         "narHash": "sha256-WfeOWLmsfnQ3+Xr9amuZPzhOXE8nxhAnhu2+zJnqOG4=",
         "owner": "hyprwm",
         "repo": "Hyprland",
         "rev": "2549f0cc9725919d2d3ef466eff60bd10e1a321e",
+=======
+        "lastModified": 1714590026,
+        "narHash": "sha256-xfVs55dpzCv9MS4wZ2zvuNHTDGiOWYDhoq+p4rDAels=",
+        "owner": "hyprwm",
+        "repo": "Hyprland",
+        "rev": "02bfb2857ee0562bc95cd1f604570967250aa129",
+>>>>>>> refs/remotes/codeberg/main
         "type": "github"
       },
       "original": {
@@ -226,11 +242,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1715287423,
         "narHash": "sha256-B7AJIjOyWgVMKhu7DlOnWa0VprdhywUVHuB/j+EwSxM=",
         "owner": "hyprwm",
         "repo": "hyprwayland-scanner",
         "rev": "e2fc1c0eb8b392110588f478cce644348ead7271",
+=======
+        "lastModified": 1714589749,
+        "narHash": "sha256-zzkb5vc4n/YI5KHrMie7oMZlgCKxs7zm/ybVXNL02Z0=",
+        "owner": "hyprwm",
+        "repo": "hyprwayland-scanner",
+        "rev": "c8c2151c607a036ddfc790f5f70237ab984266aa",
+>>>>>>> refs/remotes/codeberg/main
         "type": "github"
       },
       "original": {
@@ -241,6 +265,7 @@
     },
     "nixpkgs": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1708475490,
         "narHash": "sha256-g1v0TsWBQPX97ziznfJdWhgMyMGtoBFs102xSYO4syU=",
         "owner": "NixOS",
@@ -262,6 +287,13 @@
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "f1010e0469db743d14519a1efd37e23f8513d714",
+=======
+        "lastModified": 1714253743,
+        "narHash": "sha256-mdTQw2XlariysyScCv2tTE45QSU9v/ezLcHJ22f0Nxc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "58a1abdbae3217ca6b702f03d3b35125d88a2994",
+>>>>>>> refs/remotes/codeberg/main
         "type": "github"
       },
       "original": {
@@ -357,11 +389,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1714662532,
         "narHash": "sha256-Pj2xGSYhapYbXL7sk7TTlOtCZcTfPQoL3fPbZeg7L4Y=",
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
         "rev": "1f228ba2f1f254195c0b571302b37482861abee3",
+=======
+        "lastModified": 1714060055,
+        "narHash": "sha256-j43TS9wv9luaAlpxcxw0sjxkbcc2mGANVR2RYgo3RCw=",
+        "owner": "hyprwm",
+        "repo": "xdg-desktop-portal-hyprland",
+        "rev": "0fe840441e43da12cd7865ed9aa8cdc35a8da85a",
+>>>>>>> refs/remotes/codeberg/main
         "type": "github"
       },
       "original": {
