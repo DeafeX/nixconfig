@@ -20,6 +20,7 @@
         "Mononoki"
       ];
     })
+    anki-bin
   ];
   
   fonts.fontconfig.enable = true;

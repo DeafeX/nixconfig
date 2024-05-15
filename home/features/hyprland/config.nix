@@ -22,8 +22,10 @@ env = LIBVA_DRIVER_NAME,nvidia
 env = XDG_SESSION_TYPE,wayland
 env = GBM_BACKEND,nvidia-drm
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-env = WLR_NO_HARDWARE_CURSORS,1" else ""}
-env = NVD_BACKEND,direct
+env = WLR_NO_HARDWARE_CURSORS,1
+env = NVD_BACKEND,direct" else ""}
+
+env = NIXOS_OZONE_WL,1
 
 input {
   kb_layout = ${ kb_settings.layout }
