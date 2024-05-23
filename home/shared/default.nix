@@ -20,6 +20,8 @@
         "Mononoki"
       ];
     })
+    migu
+    kanji-stroke-order-font
     anki-bin
   ];
   
