@@ -20,6 +20,7 @@
         "Mononoki"
       ];
     })
+    kochi-substitute
     migu
     kanji-stroke-order-font
     anki-bin
@@ -41,6 +42,8 @@
     userName = "Deafex";
     userEmail = "thalesmyfortes@gmail.com";
   };
+
+
 
 	
 	home.keyboard = {
