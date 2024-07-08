@@ -68,9 +68,6 @@ animations {
   enabled = true
 }
 
-master {
-  new_is_master = true
-}
 
 misc {
   disable_hyprland_logo = true
