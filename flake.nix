@@ -16,15 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     
   };
 
-  outputs = { nixpkgs, home-manager, hyprland, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, ... }@inputs: 
   let
     lib = import ./lib.nix inputs;
   in 

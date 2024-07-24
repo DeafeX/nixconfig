@@ -6,9 +6,7 @@
     ../features/hyprland      
   ];
 
-  sound.enable = true;
-  
-  services = {
+ services = {
     tlp.enable = true;
   };
 }

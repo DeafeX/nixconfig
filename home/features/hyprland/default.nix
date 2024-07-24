@@ -1,7 +1,6 @@
 { hyprland, hyprpaper, pkgs, ... } @ inputs:
 {
 	imports = [
-		hyprland.homeManagerModules.default 
 	];
 	
 	wayland.windowManager.hyprland = {
