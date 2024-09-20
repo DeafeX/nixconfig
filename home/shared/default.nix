@@ -24,6 +24,8 @@
     migu
     kanji-stroke-order-font
     anki-bin
+    obsidian
+    carapace
   ];
   
   fonts.fontconfig.enable = true;
