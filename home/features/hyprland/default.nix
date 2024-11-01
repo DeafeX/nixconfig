@@ -1,7 +1,6 @@
-{ hyprland, hyprpaper, pkgs, ... } @ inputs:
+{ hyprland, ... } @ inputs:
 {
-	imports = [
-	];
+	imports = [];
 	
 	wayland.windowManager.hyprland = {
 		enable = true;
@@ -13,5 +12,15 @@
 		NIXOS_OZONE_WL = "1";
 		LIBSEAT_BACKEND = "logind";
 	};
-	
+
+	services.hyprpaper = {
+		enable = true;
+
+		settings = {
+			ipc = "on";
+			splash = false;
+
+			preload = (map (x: builtins.toString (./.) + "/" + x) (builtins.attrNames (builtins.readDir ./wallpapers)));		
+		};
+	};	
 }
