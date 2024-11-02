@@ -4,6 +4,8 @@
   inputs = {
   
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+
+    ags.url = "github:Aylur/ags";
     
     agenix = {
       url = "github:ryantm/agenix";

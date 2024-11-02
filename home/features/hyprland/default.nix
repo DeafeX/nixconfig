@@ -1,5 +1,7 @@
 { hyprland, ... } @ inputs:
-{
+let
+	wallPaper = "alpines.jpg";
+in {
 	imports = [];
 	
 	wayland.windowManager.hyprland = {
@@ -20,7 +22,8 @@
 			ipc = "on";
 			splash = false;
 
-			preload = (map (x: builtins.toString (./.) + "/" + x) (builtins.attrNames (builtins.readDir ./wallpapers)));		
+			preload = (map (x: builtins.toString (./.) + "/wallpapers/" + x) (builtins.attrNames (builtins.readDir ./wallpapers)));
+			wallpaper = [(", " + builtins.toString (./.) + "/wallpapers/" + wallPaper)];		
 		};
 	};	
 }

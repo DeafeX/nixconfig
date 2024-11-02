@@ -15,6 +15,7 @@
       ];
     })
     nil
+    nodePackages_latest.typescript-language-server
     (nerdfonts.override {
       fonts = [
         "Mononoki"
