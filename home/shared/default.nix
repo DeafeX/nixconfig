@@ -1,4 +1,6 @@
 { pkgs, ...} : {			
+  news.display = "show";
+
   home.username = "deafex";
   home.homeDirectory = "/home/deafex";
   

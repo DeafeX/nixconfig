@@ -28,18 +28,15 @@
 			};
 						
 			keys = {
-				normal = { 
-					K = "move_visual_line_up";
-					H = "move_visual_line_down";
-					k = "move_char_left";
-					h = "move_char_right";
-					C-k = "goto_previous_buffer";
+				normal = {
+					C-k= "goto_previous_buffer";
 					C-h = "goto_next_buffer";
 					C-w = ":buffer-close";
 				};
 			};
 		};
-
+		
+	
 		languages = {
 			language = [
 				{

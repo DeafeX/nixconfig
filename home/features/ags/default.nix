@@ -1,10 +1,10 @@
-{ pkgs, ags }: {
+{ pkgs, ags, ...}: {
   imports = [ ags.homeManagerModules.default ];
 
   programs.ags = {
     enable = true;
 
-    config = ./config;
+    configDir = ../ags;
 
     extraPackages = with pkgs; [
         

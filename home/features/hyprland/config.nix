@@ -27,7 +27,7 @@ env = NVD_BACKEND,direct" else ""}
 env = NIXOS_OZONE_WL,1
 env = WLR_NO_HARDWARE_CURSORS,1
 
-exec-once = hyprpaper
+exec-once = ags
 
 input {
   kb_layout = ${ kb_settings.layout }
