@@ -11,6 +11,6 @@
 			enableFishIntegration = true;
 		};
 		
-		theme = "Cherry Midnight";
+		themeFile = "cherry-midnight";
 	};
 }

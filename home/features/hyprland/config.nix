@@ -15,7 +15,6 @@ in
 $mod = ALT_L
 
 monitor = ${if hostname == "phobos" then "eDP-1" else "HDMI-A-1"}, 1920x1080, 0x0, 1
-monitor = Unknown-1,disabled
 
 ${if isLaptop == false then "
 env = LIBVA_DRIVER_NAME,nvidia
@@ -52,7 +51,6 @@ ${if isLaptop then
     enabled = false
   }
 
-  drop_shadow = false 
 }'' else 
 ''decoration {
   rounding = 10  
@@ -68,6 +66,10 @@ general {
 
 animations {
   enabled = true
+}
+
+cursor {
+  enable_hyprcursor = false
 }
 
 

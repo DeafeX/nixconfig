@@ -1,9 +1,13 @@
-{ hyprland, ... } @ inputs:
+{ pkgs, ... } @ inputs:
 let
 	wallPaper = "alpines.jpg";
 in {
 	imports = [];
-	
+
+	home.packages = with pkgs; [
+		hyprcursor
+	];
+		
 	wayland.windowManager.hyprland = {
 		enable = true;
 		extraConfig = import ./config.nix inputs;
