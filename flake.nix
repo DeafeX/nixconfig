@@ -11,7 +11,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    ags.url = "github:aylur/ags";
     
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -20,26 +19,13 @@
 
   };
 
-  outputs = { nixpkgs, home-manager, ags, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, ... }@inputs: 
   let
     lib = import ./lib.nix inputs;
     system = "x86_64-linux";
     pkgs = (nixpkgs.legacyPackages.${system});
   in 
   {
-    packages.${system}.default = ags.lib.bundle {
-      inherit pkgs;
-
-      src = ./ags/.;
-      name = "agsapp";
-
-      entry = "app.ts";
-
-      extraPackages = [
-        
-      ];
-    };
-           
     nixosConfigurations = {
       phobos = lib.mkHost "phobos";
       
