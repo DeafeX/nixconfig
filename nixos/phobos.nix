@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./hardware-configuration.nix
-    ../shared
-    ../features/hyprland      
+    ./features/hyprland
   ];
 
  services = {

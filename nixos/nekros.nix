@@ -1,16 +1,12 @@
 {pkgs, config, ...} : {
   imports = [
-	  ./hardware-configuration.nix
-    ../shared
-    ../features/hyprland
-    ../features/pipewire
+    ./features/hyprland
+    ./features/pipewire
   ];
 
   environment.systemPackages = with pkgs; [
     alsa-utils
   ];
-
-  
 
   services = {
     xserver = {

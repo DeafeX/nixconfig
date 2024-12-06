@@ -2,7 +2,6 @@
   description = "Configuration of deafex";
 
   inputs = {
-  
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     agenix = {
@@ -21,24 +20,30 @@
 
   outputs = { nixpkgs, home-manager, ... }@inputs: 
   let
-    lib = import ./lib.nix inputs;
     system = "x86_64-linux";
-    pkgs = (nixpkgs.legacyPackages.${system});
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+      config.nvidia.acceptLicense = true;
+    };
+    mkHost = (hostname: nixpkgs.lib.nixosSystem {
+      inherit pkgs;
+      specialArgs = inputs;
+
+      modules = [
+        home-manager.nixosModules.home-manager
+        /etc/nixos/hardware-configuration.nix
+        ./nixos/${hostname}.nix
+        ./nixos/shared
+        { networking.hostName = hostname; }
+      ];
+    });
   in 
   {
     nixosConfigurations = {
-      phobos = lib.mkHost "phobos";
+      phobos = mkHost "phobos";
       
-      nekros = lib.mkHost "nekros";
+      nekros = mkHost "nekros";
     };
-    
-    homeManagerModules = import "./home/modules";
-    
-    homeConfigurations = {
-      "deafex@phobos" = lib.mkHome "phobos";
-
-      "deafex@nekros" = lib.mkHome "nekros";
-
-    };    
   };
 }

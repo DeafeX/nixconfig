@@ -1,8 +1,21 @@
-{pkgs, ...} : {
+{home-manager, pkgs, ...} : {
   imports = [
     ./grub.nix
     ./nixcfg.nix
   ];
+
+  users = {
+    defaultUserShell = pkgs.nushell;
+    users = {
+      deafex = {
+        isNormalUser = true;
+        extraGroups = [" wheel"];
+        useDefaultShell = true;
+      };
+    };
+  };
+
+  home-manager.users.deafex = import ./home.nix;
   
   security.polkit.enable = true;
 
@@ -24,11 +37,6 @@
 
   programs.light.enable = true;
       
-  users.users.deafex = {
-    isNormalUser = true;
-    extraGroups = [ "wheel"];
-    shell = pkgs.nushell;
-  };
   
   environment = {
     systemPackages = with pkgs; [
