@@ -3,9 +3,9 @@
     ./features/hyprland
     ./features/pipewire
   ];
-
   environment.systemPackages = with pkgs; [
     alsa-utils
+    solaar
   ];
 
   services = {

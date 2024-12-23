@@ -2,20 +2,18 @@
   imports = [
     ./grub.nix
     ./nixcfg.nix
+    /home.nix
   ];
 
   users = {
-    defaultUserShell = pkgs.nushell;
     users = {
       deafex = {
         isNormalUser = true;
         extraGroups = [" wheel"];
-        useDefaultShell = true;
+        shell = pkgs.nushell;
       };
     };
   };
-
-  home-manager.users.deafex = import ./home.nix;
   
   security.polkit.enable = true;
 
