@@ -1,0 +1,3 @@
+{}: {pkgs, osConfig, ...}@inputs: {
+  imports = [];
+}

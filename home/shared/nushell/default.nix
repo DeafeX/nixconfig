@@ -6,7 +6,6 @@
 		programs = {
 			nushell = {
 				enable = true;
-
 			};
 		};
 }

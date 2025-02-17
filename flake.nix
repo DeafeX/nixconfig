@@ -28,7 +28,7 @@
     };
     mkHost = (hostname: nixpkgs.lib.nixosSystem {
       inherit pkgs;
-      specialArgs = inputs;
+      specialArgs = inputs // { hostname = hostname; };
 
       modules = [
         home-manager.nixosModules.home-manager
@@ -44,6 +44,8 @@
       phobos = mkHost "phobos";
       
       nekros = mkHost "nekros";
+
+      tellus = mkHost "tellus";
     };
   };
 }

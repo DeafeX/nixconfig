@@ -10,7 +10,8 @@ in {
 		
 	wayland.windowManager.hyprland = {
 		enable = true;
-		extraConfig = import ./config.nix inputs;
+
+		settings = import ./config.nix;
 	};
 
 	home.sessionVariables = {

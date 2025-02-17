@@ -8,6 +8,17 @@
     solaar
   ];
 
+  
+	home-manager.users.deafex = { 
+    home.packages = with pkgs; [
+		  vlc
+		  ardour
+		  qpwgraph
+		  p7zip
+		  ncspot
+	  ];
+  };
+
   services = {
     xserver = {
       videoDrivers = ["nvidia"];

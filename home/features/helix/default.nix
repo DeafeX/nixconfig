@@ -12,6 +12,11 @@
 
 				soft-wrap.enable = true;
 
+				end-of-line-diagnostics = "hint";
+
+				inline-diagnostics = {
+					cursor-line = "error";
+				};
 				lsp = {
 					display-messages = true;
 					display-inlay-hints = true;
@@ -57,7 +62,16 @@
 						];
 					};
 				}
+				{
+					name = "nix";
+					
+					language-servers = ["nixd" "nil"];
+				}
 			];
+			language-server.nixd = {
+				command = "nixd";
+				home-manager.expr = ''(builtins.getFlake "/home/deafex/.nixconfig").nixosConfigurations.tellus.options'';
+			};
 		};
 	};
 }

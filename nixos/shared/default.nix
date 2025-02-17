@@ -2,14 +2,14 @@
   imports = [
     ./grub.nix
     ./nixcfg.nix
-    /home.nix
+    ./home.nix
   ];
 
   users = {
     users = {
       deafex = {
         isNormalUser = true;
-        extraGroups = [" wheel"];
+        extraGroups = ["wheel"];
         shell = pkgs.nushell;
       };
     };

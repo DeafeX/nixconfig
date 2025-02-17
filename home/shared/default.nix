@@ -1,10 +1,10 @@
-{ pkgs, ...} : {			
+{nixpkgs, pkgs, ...} : {			
   news.display = "show";
 
   home.username = "deafex";
   home.homeDirectory = "/home/deafex";
-  
-  home.stateVersion = "23.11";  
+   
+	nixpkgs.config.allowUnfree = true;
 
   imports = [
     ./nushell
@@ -18,16 +18,12 @@
     })
     nil
     nodePackages_latest.typescript-language-server
-    (nerdfonts.override {
-      fonts = [
-        "Mononoki"
-      ];
-    })
+    nerd-fonts.mononoki
     kochi-substitute
     migu
     kanji-stroke-order-font
-    anki-bin
-    obsidian
+    #anki-bin
+    #obsidian
     carapace
   ];
   

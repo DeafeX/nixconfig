@@ -7,11 +7,4 @@
 		../features/easyeffects
 	];
 
-	home.packages = with pkgs; [
-		vlc
-		ardour
-		qpwgraph
-		p7zip
-		ncspot
-	];
 }
