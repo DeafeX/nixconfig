@@ -2,7 +2,7 @@
   imports = [
     ./grub.nix
     ./nixcfg.nix
-    ./home.nix
+    ./homemanager.nix
   ];
 
   users = {
@@ -53,5 +53,5 @@
   
   services.upower.enable = true;
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "25.05";
 }

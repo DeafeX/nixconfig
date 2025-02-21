@@ -1,6 +1,12 @@
-toLoad : {home-manager, ...}@inputs: {
-  # tolaod = [ { name = "hyprland", args = {...};}]
-  home-manager.users.deafex = {...}@inputs: {
-    imports = map (x: import ./${x.name} (if builtins.isAttrs x.args then x.args else {})) toLoad; # evaluate to: [ lamda ]    
-  };
-}
+let mapToList = f: attrs: (builtins.map (name: f name attrs.${name}) (builtins.attrNames attrs)); in
+toLoad:
+	(mapToList (name: value:
+		({...}@inputs: let
+			moduleValue = import ./${name};
+			fArgs = if (builtins.isAttrs value) then value else {};
+    	homeConfig = if (moduleValue ? "homeConfig") then { home-manager.users.deafex = (moduleValue.homeConfig fArgs); } else {};	
+      nixosConfig = if (moduleValue ? "nixosConfig") then (moduleValue.nixosConfig fArgs inputs) else {};
+		in
+			nixosConfig // homeConfig
+		)		
+	) toLoad)

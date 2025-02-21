@@ -1,4 +1,4 @@
-{
+{...}@fArgs: {
   "$mod" = "ALT_L";
   input = {
     kb_layout = "us";

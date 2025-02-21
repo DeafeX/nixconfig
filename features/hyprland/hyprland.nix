@@ -1,17 +1,17 @@
-{ pkgs, ... } @ inputs:
+{...}@fArgs: { pkgs, ... }@inputs:
 let
 	wallPaper = "alpines.jpg";
 in {
-	imports = [];
-
 	home.packages = with pkgs; [
 		hyprcursor
 	];
-		
+
+	programs.wofi.enable = true;
+			
 	wayland.windowManager.hyprland = {
 		enable = true;
 
-		settings = import ./config.nix;
+		settings = (import ./config.nix fArgs);
 	};
 
 	home.sessionVariables = {

@@ -1,3 +1,7 @@
-{}: {pkgs, osConfig, ...}@inputs: {
-  imports = [];
+{
+  nixosConfig = {...}: {...}: {
+    programs.hyprland.enable = true;
+  };
+  
+  homeConfig = import ./hyprland.nix;
 }
