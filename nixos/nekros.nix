@@ -1,8 +1,10 @@
 {pkgs, config, ...} : {
-  imports = [
-    ./features/hyprland
-    ./features/pipewire
-  ];
+  imports = (import ../features/loader.nix {
+    hyprland = true;
+    helix = true;
+    kitty = true;
+    pipewire = true;
+  });
   environment.systemPackages = with pkgs; [
     alsa-utils
     solaar
