@@ -15,11 +15,9 @@
         "--ozone-platform=wayland"
       ];
     })
-    nodePackages_latest.typescript-language-server
     nerd-fonts.mononoki
     kochi-substitute
     migu
-    kanji-stroke-order-font
     #anki-bin
     #obsidian
   ];

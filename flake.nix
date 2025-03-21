@@ -39,7 +39,5 @@
 
       tellus = mkHost "tellus";
     };
-
-    devShells.${system} = import ./devShells.nix inputs;
   };
 }

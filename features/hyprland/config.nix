@@ -1,8 +1,8 @@
 {...}@fArgs: {
   "$mod" = "ALT_L";
   input = {
-    kb_layout = "us";
-    kb_variant = "colemak_dh_iso";
+    #kb_layout = "us";
+    #kb_variant = "colemak_dh_iso";
 
     repeat_delay = "325";
     repeat_rate = "38";
