@@ -3,8 +3,8 @@
   imports = [
     ./features/hyprland
   ];
-
- services = {
+  
+  services = {
     tlp.enable = true;
   };
 }

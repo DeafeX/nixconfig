@@ -2,6 +2,7 @@
   language = [
     {
       name = "rust";
+      file-types = ["rs"];
 
       debugger = {
         name = "lldb-vscode";
@@ -26,6 +27,7 @@
     }
     {
       name = "nix";
+      file-types = ["nix"];
 
       language-servers = [ "nixd" "nil" ];
       formatter = { command = "nixfmt"; };

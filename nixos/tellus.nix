@@ -6,4 +6,10 @@
     helix = true;
   });
 
+
+  home-manager.users.deafex = {
+    home.packages = with pkgs; [
+      cutter
+    ];
+  };
 }

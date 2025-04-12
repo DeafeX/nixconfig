@@ -8,11 +8,13 @@ rec {
   shells = {
     rust = {pkgs, extraInputs ? [], toolchain ? (pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
         extensions = [ "rust-src" "cargo" "rust-analyzer" "clippy" ];  
-      }) )}: {
+      }) )}:
+      let exInputs = if (builtins.isList extraInputs) == true then extraInputs else (extraInputs pkgs);
+      in {
       packages = with pkgs; [
         pkg-config
         toolchain 
-      ] ++ extraInputs;
+      ] ++ exInputs;
     };
   };
 }
