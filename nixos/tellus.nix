@@ -4,6 +4,7 @@
     hyprland = true;
     kitty = true;
     helix = true;
+    bluetooth = true;
   });
 
 
