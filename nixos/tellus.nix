@@ -4,13 +4,14 @@
     hyprland = true;
     kitty = true;
     helix = true;
-    bluetooth = true;
+    bluetooth = { headphoneSupport = true; };
   });
 
 
   home-manager.users.deafex = {
     home.packages = with pkgs; [
       cutter
+      mitmproxy
     ];
   };
 }
