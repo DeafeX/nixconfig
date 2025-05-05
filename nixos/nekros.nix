@@ -1,47 +1,34 @@
-{pkgs, config, ...} : {
+{ pkgs, config, ... }: {
   imports = (import ../features/loader.nix {
-    hyprland = true;
+    hyprland = { input.sensitivity = "-0.1"; };
     helix = true;
     kitty = true;
     pipewire = true;
   });
-  environment.systemPackages = with pkgs; [
-    alsa-utils
-    solaar
-  ];
 
-  
-	home-manager.users.deafex = { 
-    home.packages = with pkgs; [
-		  vlc
-		  ardour
-		  qpwgraph
-		  p7zip
-		  ncspot
-	  ];
+  home-manager.users.deafex = {
+    home.packages = with pkgs; [ vlc ardour qpwgraph p7zip ncspot ];
   };
 
   services = {
-    xserver = {
-      videoDrivers = ["nvidia"];
+    xserver = { videoDrivers = [ "nvidia" ]; };
+    power-profiles-daemon.enable = true;
+  };
+
+  hardware = {
+    nvidia = {
+      open = true;
+      modesetting.enable = true;
+      nvidiaSettings = true;
     };
-    power-profiles-daemon.enable = true; 
+    graphics = {
+      extraPackages = with pkgs; [
+        nvidia-vaapi-driver
+      ];
+    };
   };
 
-    
-  hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-    modesetting.enable = true;
-    nvidiaSettings = true;
-  };
-  
   boot.loader.grub.useOSProber = true;
 
-  boot.initrd.kernelModules = [
-    "nvidia"
-    "nvidia_modeset"
-    "nvidia_uvm" 
-    "nvidia_drm"
-  ];
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
 }

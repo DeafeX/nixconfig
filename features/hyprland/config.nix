@@ -1,4 +1,5 @@
-{...}@fArgs: {
+{input ? {}, nvidia ? false, ...}@fArgs:
+{
   "$mod" = "ALT_L";
   input = {
     kb_layout = "us";
@@ -8,7 +9,7 @@
     repeat_rate = "38";
 
     sensitivity = "0.35";
-  };
+  } // input;
   decoration = {
     rounding = "10";
     blur.enabled = false;
@@ -38,4 +39,10 @@
             "$mod SHIFT, ${builtins.toString (workspace - len)}, movetoworkspace, ${builtins.toString (workspace - len)}"
         )
       ) (len * 2) ));
-}
+} // (if nvidia then {
+  env = [
+    "LIBVA_DRIVER_NAME,nvidia"
+    "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+    "ELECTRON_OZONE_PLATFORM_HINT,auto"
+  ];
+} else {})
