@@ -7,6 +7,7 @@
     bluetooth = { headphoneSupport = true; };
   });
 
+  services.tlp.enable = true;
 
   home-manager.users.deafex = {
     home.packages = with pkgs; [

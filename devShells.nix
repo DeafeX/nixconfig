@@ -15,6 +15,8 @@ rec {
         pkg-config
         toolchain 
       ] ++ exInputs;
+
+      RUST_SRC_PATH = "${toolchain}/lib/rustlib/src/rust/library";
     };
   };
 }
