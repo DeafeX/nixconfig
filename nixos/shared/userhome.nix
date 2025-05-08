@@ -39,6 +39,10 @@
     userEmail = "thalesmyfortes@gmail.com";
   };
 
+  programs.gh = {
+    enable = true;
+  };
+
   programs.nh = {
     enable = true;
     flake = "/home/deafex/.nixconfig";
