@@ -18,7 +18,7 @@
     nerd-fonts.mononoki
     kochi-substitute
     migu
-    #anki-bin
+    anki-bin
     #obsidian
   ];
   

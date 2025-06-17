@@ -14,7 +14,6 @@
       cutter
       mitmproxy
       transmission_4
-      anki-bin
     ];
   };
 }
